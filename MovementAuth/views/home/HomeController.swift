@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 import AVFoundation
+import KeychainAccess
 
 class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputObjectsDelegate {
     
     var mPresenter: HomePresenter?
     
     @IBOutlet weak var vScanCode: UIButton!
+    @IBOutlet weak var vTestMovements: UIButton!
     @IBOutlet weak var vBtnsGuard: UIView!
     @IBOutlet weak var btnCloseCamera: UIButton!
     
@@ -26,6 +28,10 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     var captureDevice: AVCaptureDevice?
     var companyCodeStrings: [String] = []
     var sessionStarted = false
+    var userEmail = ""
+    var userSecret = ""
+    
+    let keychain = Keychain(service: "com.frantastic.MovementAuth")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +42,8 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     
     // Init Functions
     func initViews() {
-        CommonUtils.setCorners(forViews: [vScanCode])
-        CommonUtils.setShadow(forViews: [vScanCode])
+        CommonUtils.setCorners(forViews: [vScanCode, vTestMovements])
+        CommonUtils.setShadow(forViews: [vScanCode, vTestMovements])
     }
 
     func initController() {
@@ -46,6 +52,36 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     }
     
     // Primary Functions
+    
+    func storeSecret() {
+        DispatchQueue.global().async {
+            do {
+                try self.keychain
+                    .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
+                    .set(self.userSecret, key: "AuthMovementSecretKey")
+                    
+                try self.keychain
+                    .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
+                    .set(self.userEmail, key: "AuthMovementEmail")
+            } catch let error {
+                print("error storing data = ", error)
+            }
+        }
+        
+        /*
+         To recover
+         DispatchQueue.global().async {
+             do {
+                 let secret = try self.keychain
+                     .authenticationPrompt("Authenticate please")
+                     .get("AuthMovementSecretKey")
+                     print("Secret = ", secret!)
+             } catch let error {
+                 print("error storing data = ", error)
+             }
+         }
+         */
+    }
 
     func scanCode(){
         
@@ -73,16 +109,21 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
                 if object.type == AVMetadataObject.ObjectType.qr {
                     
                     companyCodeStrings = object.stringValue!.components(separatedBy: "-")
-                    print("STRINGS = ", companyCodeStrings)
                     
-                    let alert = UIAlertController(title: "¿Quieres suscribirte?", message: "Estás por suscribirte a \(companyCodeStrings[0])", preferredStyle: .alert)
+                    if(!checkQRString(str: object.stringValue!)) {
+                        showMessage("Wrong QR, please scan a correct code.")
+                        self.hideCamera()
+                        return
+                    }
+
+                    let alert = UIAlertController(title: "Link an account", message: "Do you wish to link your  \(userEmail) account. Any previous linked account will be overwritten.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: { (UIAlertAction) in
                         self.hideCamera()
                     }))
-                    alert.addAction(UIAlertAction(title: "Sí", style: .default, handler: { (UIAlertAction) in
+                    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (UIAlertAction) in
+                        self.storeSecret()
                         self.hideCamera()
                     }))
-                    
                     present(alert, animated: true, completion: nil)
                 }
             }
@@ -90,6 +131,25 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     }
         
     // Auxiliary functions
+    func checkQRString(str: String) -> Bool {
+        let elements = str.components(separatedBy: "-")
+        if(elements.count != 2){
+            return false
+        }
+        
+        let email = elements[0].components(separatedBy: ":")
+        if(email.count != 2 || email[0] != "email"){
+            return false
+        }
+        
+        let secret = elements[1].components(separatedBy: ":")
+        if(secret.count != 2 || secret[0] != "secret"){
+            return false
+        }
+        userEmail = email[1]
+        userSecret = secret[1]
+        return true
+    }
     
     func showCamera(){
         vBtnsGuard.isHidden = false
@@ -107,25 +167,18 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
         video.removeFromSuperlayer()
         vBtnsGuard.isHidden = true
     }
-    
-    func showCongratulations(){
-        let alert = UIAlertController(title: "¡Felicidades!", message: "Ahora estás suscrito, recuerda referir a tus amigos para sumar puntos y canjearlos por tus productos favoritos", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func showIsSubscribed() {
-        let alert = UIAlertController(title: "Lo sentimos", message: "Al parecer ya estás suscrito a esta empresa, para ver a qué empresas estás suscrito ingresa a la sección 'Mis empresas'", preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+        
     // Click Functions
     @IBAction func onScanCode(_ sender: Any) {
         //https://www.youtube.com/watch?v=4Zf9dHDJ2yU
         scanCode()
     }
     
+    @IBAction func onTestMovements(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "TestMovementsController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "TestMovementsController") as UIViewController
+        present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func onCloseCamera(_ sender: Any) {
         hideCamera()

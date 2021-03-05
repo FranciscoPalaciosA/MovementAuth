@@ -44,7 +44,7 @@
                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="onCatalog:" destination="5aJ-ea-Khc" eventType="touchUpInside" id="MXW-cL-2pi"/>
+                                            <action selector="onTestMovements:" destination="5aJ-ea-Khc" eventType="touchUpInside" id="4ae-Pg-Oid"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5sA-9W-eH7" userLabel="VStartMovements">
@@ -128,6 +128,7 @@
                         <outlet property="imgQRArea" destination="XMn-nN-shU" id="Rg3-cs-oFK"/>
                         <outlet property="vBtnsGuard" destination="Kfg-Mj-Etk" id="Y8u-Fn-X3W"/>
                         <outlet property="vScanCode" destination="HfW-Xm-bMO" id="1vT-1A-kdf"/>
+                        <outlet property="vTestMovements" destination="Sfv-iO-zQt" id="71O-YB-qMI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vlj-7h-aVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
