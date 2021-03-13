@@ -3,51 +3,87 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0441B3E976E5F55E22731AECFF0DBA88 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EDC7F5AB062228320A8F30E874DBF5 /* Keychain.swift */; };
-		4AEB48FE18565A59266480250E7C3FEA /* KeychainAccess-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C8CC24E5342FC3BA54FD6B10029448E4 /* KeychainAccess-dummy.m */; };
-		92F05153679E29F5AE0DA961AC4E431B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		9868E671EB2943A992991808D3383FBA /* Pods-MovementAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B2BE1181A6FC3511D662405370539 /* Pods-MovementAuth-dummy.m */; };
+		01EFB0F776C8580503744357C3E79B0E /* Data+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B51E17784038FAB3D4984BA10873E6E /* Data+Utilities.swift */; };
+		0441B3E976E5F55E22731AECFF0DBA88 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1126B642638E3AD578ACD2C0388FADA /* Keychain.swift */; };
+		0A7D2E70CC6E11F9078E51C6E49E42D2 /* SwiftOTP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FAF4CE1939A81D316D409EC53AFDF68E /* SwiftOTP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		216F5CBE1EE9EBEDA236D70E8A374514 /* SwiftOTP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8922417C24931841CA91936B4B4A5D02 /* SwiftOTP-dummy.m */; };
+		314C981E34E87E30E228DE6C3278685D /* Base32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D87F8D3D51751B796467864CA93C428 /* Base32.swift */; };
+		33BD151C863DEC8592DF1FE7B7EA014B /* HOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22338A40FD3FD64B55B5044FC30200E /* HOTP.swift */; };
+		4AEB48FE18565A59266480250E7C3FEA /* KeychainAccess-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2DB14E310105EC2D5A9E54590379F7E /* KeychainAccess-dummy.m */; };
+		60E8CD3809FFE42BA123F5028EEDA0D3 /* UInt64+Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13964ED470521E72F3551CF7ABC5FB73 /* UInt64+Data.swift */; };
+		785E01CB1BBAFC2B018111B9BB3ABEB3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41501446CC5502CFBB8D7ED21F630D2 /* StringExtension.swift */; };
+		8B335BE6DC7D5F947DD1099EE2F16B8A /* TOTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63366EDEA177C676946CFCF0822141B3 /* TOTP.swift */; };
+		95B8944B2DF2031BE2A6E17BEADBA87A /* SwiftOTP.h in Headers */ = {isa = PBXBuildFile; fileRef = EF6232124B1F02005211AB00916C5062 /* SwiftOTP.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		96966C6AF400F1AC6F0DA03C062F7E96 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		9C11C13DCA82C90768BEE6A1ED536F0A /* OTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB06E4384F4097D8316402CE5B98B93 /* OTPAlgorithm.swift */; };
+		9CC179DBEA05A91E30F27E0D49015B48 /* Pods-MovementAuth-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F4B2BE1181A6FC3511D662405370539 /* Pods-MovementAuth-dummy.m */; };
+		BD50C1516161BA7C742AB86312490D84 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D31EF49A7F61276083854E07253E28 /* Generator.swift */; };
 		C47A1C638C0E97C4ECCBD18FD494BB34 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		EEADFC5C1C5EC6E3E20506B8E069931D /* KeychainAccess-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D900EDF1BFD0200B583DFD18B7DAEDF2 /* KeychainAccess-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA492D286F241E9BA51B1CFE3A32C638 /* Pods-MovementAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBA6D7CAE9B7E06DF43262378B08EA5 /* Pods-MovementAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D90FE7A466E641C5F8416304BC2C95C4 /* Pods-MovementAuth-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0EBA6D7CAE9B7E06DF43262378B08EA5 /* Pods-MovementAuth-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EEADFC5C1C5EC6E3E20506B8E069931D /* KeychainAccess-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BD0A183FC02DC4B5C9B36AD0EE7CF2C6 /* KeychainAccess-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF0EDD9AF2C91716F14654CCFAD243FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CFA539DE897925D7CE431F715DE37C30 /* PBXContainerItemProxy */ = {
+		4462BAAFB70FF08C45375161EFFE7E45 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 615C831BCE925ED486B225B87E44926D;
 			remoteInfo = KeychainAccess;
 		};
+		543A6BA34CBD394B7EAD97FE99CDDA11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 58B9AD85FE03CF119B42720114874474;
+			remoteInfo = SwiftOTP;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		069F968B931A157844ADAD11A41179F3 /* KeychainAccess-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainAccess-Info.plist"; sourceTree = "<group>"; };
+		0B34674C2AD75FBA3643552A9337F1AE /* SwiftOTP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftOTP-Info.plist"; sourceTree = "<group>"; };
 		0EBA6D7CAE9B7E06DF43262378B08EA5 /* Pods-MovementAuth-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MovementAuth-umbrella.h"; sourceTree = "<group>"; };
-		102764E75956A8848BC9691383C3E031 /* KeychainAccess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.debug.xcconfig; sourceTree = "<group>"; };
 		112519CA182ABCAC5DA616FD9A8ECC20 /* Pods-MovementAuth-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MovementAuth-acknowledgements.markdown"; sourceTree = "<group>"; };
-		241D78B31A172C75E52D0898852DF5FB /* KeychainAccess-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-prefix.pch"; sourceTree = "<group>"; };
+		13964ED470521E72F3551CF7ABC5FB73 /* UInt64+Data.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UInt64+Data.swift"; path = "SwiftOTP/UInt64+Data.swift"; sourceTree = "<group>"; };
 		3572E4E6B313E81B5B87B4A90A058543 /* Pods_MovementAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MovementAuth.framework; path = "Pods-MovementAuth.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		488F986AE4114D36F8152DC5360447A4 /* KeychainAccess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.release.xcconfig; sourceTree = "<group>"; };
+		5315D509AA8F67B996C829CC85F97528 /* KeychainAccess-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-prefix.pch"; sourceTree = "<group>"; };
 		534061EE12F329FEF964D506D4B010D4 /* Pods-MovementAuth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovementAuth.release.xcconfig"; sourceTree = "<group>"; };
 		5B010CF7E793EF9B5BF237FE7F7391B6 /* Pods-MovementAuth-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovementAuth-Info.plist"; sourceTree = "<group>"; };
-		5F254B27EA1EAC870127B58E6115CCC1 /* KeychainAccess-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "KeychainAccess-Info.plist"; sourceTree = "<group>"; };
+		5BC1DAFAD32EA4E06947837444D5E987 /* SwiftOTP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftOTP.debug.xcconfig; sourceTree = "<group>"; };
 		5F4B2BE1181A6FC3511D662405370539 /* Pods-MovementAuth-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MovementAuth-dummy.m"; sourceTree = "<group>"; };
 		6220B2FCE95BE983D03A0A548508B4B7 /* Pods-MovementAuth-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MovementAuth-acknowledgements.plist"; sourceTree = "<group>"; };
+		63366EDEA177C676946CFCF0822141B3 /* TOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TOTP.swift; path = SwiftOTP/TOTP.swift; sourceTree = "<group>"; };
+		6E076E17AC874C19991519F0297F1325 /* SwiftOTP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftOTP-prefix.pch"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7D87F8D3D51751B796467864CA93C428 /* Base32.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Base32.swift; path = SwiftOTP/Base32/Base32.swift; sourceTree = "<group>"; };
+		7E95E920E5ECFBCFB22625FC93C28826 /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
+		85A050791D7F1FE961D2D5F52E9D7264 /* KeychainAccess.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.debug.xcconfig; sourceTree = "<group>"; };
 		87048450CB59FE48BBC63ECA54A0A7CC /* Pods-MovementAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MovementAuth.modulemap"; sourceTree = "<group>"; };
+		8922417C24931841CA91936B4B4A5D02 /* SwiftOTP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftOTP-dummy.m"; sourceTree = "<group>"; };
+		8B51E17784038FAB3D4984BA10873E6E /* Data+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Utilities.swift"; path = "SwiftOTP/Data+Utilities.swift"; sourceTree = "<group>"; };
+		906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftOTP.framework; path = SwiftOTP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A1AFE72AECFFA10F265D22055A2F35B7 /* KeychainAccess.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = KeychainAccess.modulemap; sourceTree = "<group>"; };
-		B3EDC7F5AB062228320A8F30E874DBF5 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Lib/KeychainAccess/Keychain.swift; sourceTree = "<group>"; };
-		C8CC24E5342FC3BA54FD6B10029448E4 /* KeychainAccess-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainAccess-dummy.m"; sourceTree = "<group>"; };
+		A22338A40FD3FD64B55B5044FC30200E /* HOTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HOTP.swift; path = SwiftOTP/HOTP.swift; sourceTree = "<group>"; };
+		A2DB14E310105EC2D5A9E54590379F7E /* KeychainAccess-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "KeychainAccess-dummy.m"; sourceTree = "<group>"; };
+		A4D31EF49A7F61276083854E07253E28 /* Generator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Generator.swift; path = SwiftOTP/Generator.swift; sourceTree = "<group>"; };
+		ADB06E4384F4097D8316402CE5B98B93 /* OTPAlgorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = OTPAlgorithm.swift; path = SwiftOTP/OTPAlgorithm.swift; sourceTree = "<group>"; };
+		B9D9CA9732E1D3644ABD012F510340E6 /* SwiftOTP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftOTP.release.xcconfig; sourceTree = "<group>"; };
+		BD0A183FC02DC4B5C9B36AD0EE7CF2C6 /* KeychainAccess-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-umbrella.h"; sourceTree = "<group>"; };
+		C928DCF2F8AD7E5A44F880E43A067BF9 /* SwiftOTP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftOTP.modulemap; sourceTree = "<group>"; };
 		CCFA774ADFACE75854553E91E108B234 /* Pods-MovementAuth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MovementAuth.debug.xcconfig"; sourceTree = "<group>"; };
-		CD412C6E579A127E79AB91966C4560FC /* KeychainAccess.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KeychainAccess.release.xcconfig; sourceTree = "<group>"; };
-		D900EDF1BFD0200B583DFD18B7DAEDF2 /* KeychainAccess-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainAccess-umbrella.h"; sourceTree = "<group>"; };
+		E41501446CC5502CFBB8D7ED21F630D2 /* StringExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringExtension.swift; path = SwiftOTP/Base32/StringExtension.swift; sourceTree = "<group>"; };
 		E8EE7F078656FABB8F6821D10FF994BB /* KeychainAccess.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainAccess.framework; path = KeychainAccess.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAFC775EC88EDD6F064F1F687FAEA0BA /* Pods-MovementAuth-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MovementAuth-frameworks.sh"; sourceTree = "<group>"; };
+		EF6232124B1F02005211AB00916C5062 /* SwiftOTP.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftOTP.h; path = SwiftOTP/SwiftOTP.h; sourceTree = "<group>"; };
+		F1126B642638E3AD578ACD2C0388FADA /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Lib/KeychainAccess/Keychain.swift; sourceTree = "<group>"; };
+		FAF4CE1939A81D316D409EC53AFDF68E /* SwiftOTP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftOTP-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,23 +95,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C92B6D8E125E960B46BA2D6F48DBF576 /* Frameworks */ = {
+		795CC18760B92738CF80049C57C791E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92F05153679E29F5AE0DA961AC4E431B /* Foundation.framework in Frameworks */,
+				96966C6AF400F1AC6F0DA03C062F7E96 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD4A1733E1F296C93194783E31FF4D77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF0EDD9AF2C91716F14654CCFAD243FC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1822CF174BA8C3BC1C6A1BCD70C74D9E /* Pods */ = {
+		081D5312E2DB79334ED8D2BDC22C75EE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				919386A9ADBF76F63E3A3BBA7B97D2E4 /* KeychainAccess */,
+				E8EE7F078656FABB8F6821D10FF994BB /* KeychainAccess.framework */,
+				3572E4E6B313E81B5B87B4A90A058543 /* Pods_MovementAuth.framework */,
+				906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP.framework */,
 			);
-			name = Pods;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		20425A81A355D1A352D598F846CA1074 /* Targets Support Files */ = {
@@ -103,6 +149,16 @@
 			path = "Target Support Files/Pods-MovementAuth";
 			sourceTree = "<group>";
 		};
+		4A6375C4D591A99E8A64D99D2035C3B8 /* KeychainAccess */ = {
+			isa = PBXGroup;
+			children = (
+				F1126B642638E3AD578ACD2C0388FADA /* Keychain.swift */,
+				B2FEC0319ED82E25F689C580F7CF9D0E /* Support Files */,
+			);
+			name = KeychainAccess;
+			path = KeychainAccess;
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,38 +167,52 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5853D131E087824CC2E695BA27F22075 /* Products */ = {
+		6B4B879B7DEAEABEC541823B6C2F8E6A /* SwiftOTP */ = {
 			isa = PBXGroup;
 			children = (
-				E8EE7F078656FABB8F6821D10FF994BB /* KeychainAccess.framework */,
-				3572E4E6B313E81B5B87B4A90A058543 /* Pods_MovementAuth.framework */,
+				7D87F8D3D51751B796467864CA93C428 /* Base32.swift */,
+				8B51E17784038FAB3D4984BA10873E6E /* Data+Utilities.swift */,
+				A4D31EF49A7F61276083854E07253E28 /* Generator.swift */,
+				A22338A40FD3FD64B55B5044FC30200E /* HOTP.swift */,
+				ADB06E4384F4097D8316402CE5B98B93 /* OTPAlgorithm.swift */,
+				E41501446CC5502CFBB8D7ED21F630D2 /* StringExtension.swift */,
+				EF6232124B1F02005211AB00916C5062 /* SwiftOTP.h */,
+				63366EDEA177C676946CFCF0822141B3 /* TOTP.swift */,
+				13964ED470521E72F3551CF7ABC5FB73 /* UInt64+Data.swift */,
+				A7587F5629666776F32812A4A35001D8 /* Support Files */,
 			);
-			name = Products;
+			name = SwiftOTP;
+			path = SwiftOTP;
 			sourceTree = "<group>";
 		};
-		7139A0FCEFAB916F2769918041C0A2D4 /* Support Files */ = {
+		A7587F5629666776F32812A4A35001D8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A1AFE72AECFFA10F265D22055A2F35B7 /* KeychainAccess.modulemap */,
-				C8CC24E5342FC3BA54FD6B10029448E4 /* KeychainAccess-dummy.m */,
-				5F254B27EA1EAC870127B58E6115CCC1 /* KeychainAccess-Info.plist */,
-				241D78B31A172C75E52D0898852DF5FB /* KeychainAccess-prefix.pch */,
-				D900EDF1BFD0200B583DFD18B7DAEDF2 /* KeychainAccess-umbrella.h */,
-				102764E75956A8848BC9691383C3E031 /* KeychainAccess.debug.xcconfig */,
-				CD412C6E579A127E79AB91966C4560FC /* KeychainAccess.release.xcconfig */,
+				C928DCF2F8AD7E5A44F880E43A067BF9 /* SwiftOTP.modulemap */,
+				8922417C24931841CA91936B4B4A5D02 /* SwiftOTP-dummy.m */,
+				0B34674C2AD75FBA3643552A9337F1AE /* SwiftOTP-Info.plist */,
+				6E076E17AC874C19991519F0297F1325 /* SwiftOTP-prefix.pch */,
+				FAF4CE1939A81D316D409EC53AFDF68E /* SwiftOTP-umbrella.h */,
+				5BC1DAFAD32EA4E06947837444D5E987 /* SwiftOTP.debug.xcconfig */,
+				B9D9CA9732E1D3644ABD012F510340E6 /* SwiftOTP.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftOTP";
+			sourceTree = "<group>";
+		};
+		B2FEC0319ED82E25F689C580F7CF9D0E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7E95E920E5ECFBCFB22625FC93C28826 /* KeychainAccess.modulemap */,
+				A2DB14E310105EC2D5A9E54590379F7E /* KeychainAccess-dummy.m */,
+				069F968B931A157844ADAD11A41179F3 /* KeychainAccess-Info.plist */,
+				5315D509AA8F67B996C829CC85F97528 /* KeychainAccess-prefix.pch */,
+				BD0A183FC02DC4B5C9B36AD0EE7CF2C6 /* KeychainAccess-umbrella.h */,
+				85A050791D7F1FE961D2D5F52E9D7264 /* KeychainAccess.debug.xcconfig */,
+				488F986AE4114D36F8152DC5360447A4 /* KeychainAccess.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/KeychainAccess";
-			sourceTree = "<group>";
-		};
-		919386A9ADBF76F63E3A3BBA7B97D2E4 /* KeychainAccess */ = {
-			isa = PBXGroup;
-			children = (
-				B3EDC7F5AB062228320A8F30E874DBF5 /* Keychain.swift */,
-				7139A0FCEFAB916F2769918041C0A2D4 /* Support Files */,
-			);
-			name = KeychainAccess;
-			path = KeychainAccess;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -150,8 +220,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				1822CF174BA8C3BC1C6A1BCD70C74D9E /* Pods */,
-				5853D131E087824CC2E695BA27F22075 /* Products */,
+				F7BFC73981B2D8D52146C367FE9C378E /* Pods */,
+				081D5312E2DB79334ED8D2BDC22C75EE /* Products */,
 				20425A81A355D1A352D598F846CA1074 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -162,6 +232,15 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7BFC73981B2D8D52146C367FE9C378E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A6375C4D591A99E8A64D99D2035C3B8 /* KeychainAccess */,
+				6B4B879B7DEAEABEC541823B6C2F8E6A /* SwiftOTP */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,17 +254,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD106D55C14339A939C083EAC9675B02 /* Headers */ = {
+		C19F318E6041F05AF620ABE19F5A35BE /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA492D286F241E9BA51B1CFE3A32C638 /* Pods-MovementAuth-umbrella.h in Headers */,
+				0A7D2E70CC6E11F9078E51C6E49E42D2 /* SwiftOTP-umbrella.h in Headers */,
+				95B8944B2DF2031BE2A6E17BEADBA87A /* SwiftOTP.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0C9335D9B7822BFF73605A4B000478C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D90FE7A466E641C5F8416304BC2C95C4 /* Pods-MovementAuth-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		58B9AD85FE03CF119B42720114874474 /* SwiftOTP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4410E6CF7796A54FFF9BCAE01C24EE9F /* Build configuration list for PBXNativeTarget "SwiftOTP" */;
+			buildPhases = (
+				C19F318E6041F05AF620ABE19F5A35BE /* Headers */,
+				DF0B727A30F5F8D1A1B3B463DDCA7ECB /* Sources */,
+				795CC18760B92738CF80049C57C791E4 /* Frameworks */,
+				8496C531CB2D93417BC622555ED60690 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftOTP;
+			productName = SwiftOTP;
+			productReference = 906B4F8881E1F47CA253F59EDEBDC66C /* SwiftOTP.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		615C831BCE925ED486B225B87E44926D /* KeychainAccess */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4BEE926243448802ACA6F07A75D9C025 /* Build configuration list for PBXNativeTarget "KeychainAccess" */;
@@ -206,17 +312,18 @@
 		};
 		A8E4F5F3B6B2FC7FE143FB0E081ED9C0 /* Pods-MovementAuth */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71B2173486A1986793D01413C59BA3F1 /* Build configuration list for PBXNativeTarget "Pods-MovementAuth" */;
+			buildConfigurationList = 5CFB54A319C8B4D1CCAD87D9DE0EF3A6 /* Build configuration list for PBXNativeTarget "Pods-MovementAuth" */;
 			buildPhases = (
-				AD106D55C14339A939C083EAC9675B02 /* Headers */,
-				670D94CA003AE747FFD15BF13663E851 /* Sources */,
-				C92B6D8E125E960B46BA2D6F48DBF576 /* Frameworks */,
-				E09702F9891F445124FEB3CC724BDF08 /* Resources */,
+				D0C9335D9B7822BFF73605A4B000478C /* Headers */,
+				80943CFC8CD1D80D439EE180F3AEE1BD /* Sources */,
+				BD4A1733E1F296C93194783E31FF4D77 /* Frameworks */,
+				320E78BBC8CB10B3DE76CBABD16130D4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5A94CDB71995C1304045D07D1499F454 /* PBXTargetDependency */,
+				28EE6160DC52FDC59EDC0EB0F1F3BFB1 /* PBXTargetDependency */,
+				F63B8F912B533388B044DC4DAAC61168 /* PBXTargetDependency */,
 			);
 			name = "Pods-MovementAuth";
 			productName = "Pods-MovementAuth";
@@ -233,7 +340,7 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -241,25 +348,33 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 5853D131E087824CC2E695BA27F22075 /* Products */;
+			productRefGroup = 081D5312E2DB79334ED8D2BDC22C75EE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				615C831BCE925ED486B225B87E44926D /* KeychainAccess */,
 				A8E4F5F3B6B2FC7FE143FB0E081ED9C0 /* Pods-MovementAuth */,
+				58B9AD85FE03CF119B42720114874474 /* SwiftOTP */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AE292B4411627ABE21EB769134C1E8BB /* Resources */ = {
+		320E78BBC8CB10B3DE76CBABD16130D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E09702F9891F445124FEB3CC724BDF08 /* Resources */ = {
+		8496C531CB2D93417BC622555ED60690 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE292B4411627ABE21EB769134C1E8BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,11 +384,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		670D94CA003AE747FFD15BF13663E851 /* Sources */ = {
+		80943CFC8CD1D80D439EE180F3AEE1BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9868E671EB2943A992991808D3383FBA /* Pods-MovementAuth-dummy.m in Sources */,
+				9CC179DBEA05A91E30F27E0D49015B48 /* Pods-MovementAuth-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,23 +401,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DF0B727A30F5F8D1A1B3B463DDCA7ECB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				314C981E34E87E30E228DE6C3278685D /* Base32.swift in Sources */,
+				01EFB0F776C8580503744357C3E79B0E /* Data+Utilities.swift in Sources */,
+				BD50C1516161BA7C742AB86312490D84 /* Generator.swift in Sources */,
+				33BD151C863DEC8592DF1FE7B7EA014B /* HOTP.swift in Sources */,
+				9C11C13DCA82C90768BEE6A1ED536F0A /* OTPAlgorithm.swift in Sources */,
+				785E01CB1BBAFC2B018111B9BB3ABEB3 /* StringExtension.swift in Sources */,
+				216F5CBE1EE9EBEDA236D70E8A374514 /* SwiftOTP-dummy.m in Sources */,
+				8B335BE6DC7D5F947DD1099EE2F16B8A /* TOTP.swift in Sources */,
+				60E8CD3809FFE42BA123F5028EEDA0D3 /* UInt64+Data.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5A94CDB71995C1304045D07D1499F454 /* PBXTargetDependency */ = {
+		28EE6160DC52FDC59EDC0EB0F1F3BFB1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = KeychainAccess;
 			target = 615C831BCE925ED486B225B87E44926D /* KeychainAccess */;
-			targetProxy = CFA539DE897925D7CE431F715DE37C30 /* PBXContainerItemProxy */;
+			targetProxy = 4462BAAFB70FF08C45375161EFFE7E45 /* PBXContainerItemProxy */;
+		};
+		F63B8F912B533388B044DC4DAAC61168 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftOTP;
+			target = 58B9AD85FE03CF119B42720114874474 /* SwiftOTP */;
+			targetProxy = 543A6BA34CBD394B7EAD97FE99CDDA11 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4CBA8D13E1A237CCD400439179E5B54E /* Debug */ = {
+		4C3A32610E41561279D2376F13300D98 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CCFA774ADFACE75854553E91E108B234 /* Pods-MovementAuth.debug.xcconfig */;
+			baseConfigurationReference = B9D9CA9732E1D3644ABD012F510340E6 /* SwiftOTP.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -312,60 +448,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftOTP/SwiftOTP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftOTP/SwiftOTP-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SwiftOTP/SwiftOTP.modulemap";
+				PRODUCT_MODULE_NAME = SwiftOTP;
+				PRODUCT_NAME = SwiftOTP;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		559D7997946A88D48FF4C8347E5E498D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 534061EE12F329FEF964D506D4B010D4 /* Pods-MovementAuth.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -501,9 +599,81 @@
 			};
 			name = Debug;
 		};
+		815143407D380284ACFF6732BE9A5B7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BC1DAFAD32EA4E06947837444D5E987 /* SwiftOTP.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftOTP/SwiftOTP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftOTP/SwiftOTP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SwiftOTP/SwiftOTP.modulemap";
+				PRODUCT_MODULE_NAME = SwiftOTP;
+				PRODUCT_NAME = SwiftOTP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		83D01C917D4CDF7CC5999CE7FEE4A684 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCFA774ADFACE75854553E91E108B234 /* Pods-MovementAuth.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		877D0C843EF9B7A6EDCEE1C2ADC57B1D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 102764E75956A8848BC9691383C3E031 /* KeychainAccess.debug.xcconfig */;
+			baseConfigurationReference = 85A050791D7F1FE961D2D5F52E9D7264 /* KeychainAccess.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -535,9 +705,47 @@
 			};
 			name = Debug;
 		};
+		C538DD8B05D896F0EA87258482D073DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 534061EE12F329FEF964D506D4B010D4 /* Pods-MovementAuth.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MovementAuth/Pods-MovementAuth.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		ED1BD43F05E25AD1812664ED10717173 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD412C6E579A127E79AB91966C4560FC /* KeychainAccess.release.xcconfig */;
+			baseConfigurationReference = 488F986AE4114D36F8152DC5360447A4 /* KeychainAccess.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -573,6 +781,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4410E6CF7796A54FFF9BCAE01C24EE9F /* Build configuration list for PBXNativeTarget "SwiftOTP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				815143407D380284ACFF6732BE9A5B7F /* Debug */,
+				4C3A32610E41561279D2376F13300D98 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -591,11 +808,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71B2173486A1986793D01413C59BA3F1 /* Build configuration list for PBXNativeTarget "Pods-MovementAuth" */ = {
+		5CFB54A319C8B4D1CCAD87D9DE0EF3A6 /* Build configuration list for PBXNativeTarget "Pods-MovementAuth" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4CBA8D13E1A237CCD400439179E5B54E /* Debug */,
-				559D7997946A88D48FF4C8347E5E498D /* Release */,
+				83D01C917D4CDF7CC5999CE7FEE4A684 /* Debug */,
+				C538DD8B05D896F0EA87258482D073DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

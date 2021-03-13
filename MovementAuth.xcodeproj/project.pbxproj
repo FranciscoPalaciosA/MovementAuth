@@ -14,6 +14,7 @@
 		A13092B025EF205D007FF1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092AE25EF205D007FF1BA /* Main.storyboard */; };
 		A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13092B125EF205F007FF1BA /* Assets.xcassets */; };
 		A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092B325EF205F007FF1BA /* LaunchScreen.storyboard */; };
+		A1BCA78C25FC1E3300282868 /* TOTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */; };
 		A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */; };
 		A1D126ED25F19F7700E86084 /* TestMovements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D126EC25F19F7700E86084 /* TestMovements.swift */; };
 		A1D126F025F19F8800E86084 /* TestMovementsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D126EF25F19F8800E86084 /* TestMovementsPresenter.swift */; };
@@ -40,6 +41,7 @@
 		A13092B125EF205F007FF1BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13092B425EF205F007FF1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13092B625EF205F007FF1BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPAlgorithm.swift; sourceTree = "<group>"; };
 		A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestMovementsController.storyboard; sourceTree = "<group>"; };
 		A1D126EC25F19F7700E86084 /* TestMovements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMovements.swift; sourceTree = "<group>"; };
 		A1D126EF25F19F8800E86084 /* TestMovementsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMovementsPresenter.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				A1EA68F525EF39EE008D0066 /* CommonUtils.swift */,
+				A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				A1EA690E25EF3B70008D0066 /* HomeController.swift in Sources */,
 				A1EA68FD25EF3A9A008D0066 /* Base.swift in Sources */,
 				A1EA68F625EF39EE008D0066 /* CommonUtils.swift in Sources */,
+				A1BCA78C25FC1E3300282868 /* TOTPAlgorithm.swift in Sources */,
 				A1EA690B25EF3B66008D0066 /* HomePresenter.swift in Sources */,
 				A1EA690825EF3B5C008D0066 /* Home.swift in Sources */,
 				A13092AB25EF205D007FF1BA /* SceneDelegate.swift in Sources */,

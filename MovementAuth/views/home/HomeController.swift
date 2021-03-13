@@ -18,6 +18,7 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     @IBOutlet weak var vScanCode: UIButton!
     @IBOutlet weak var vTestMovements: UIButton!
     @IBOutlet weak var vBtnsGuard: UIView!
+    @IBOutlet weak var vStartMovements: UIButton!
     @IBOutlet weak var btnCloseCamera: UIButton!
     
     @IBOutlet weak var imgQRArea: UIImageView!
@@ -42,8 +43,8 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     
     // Init Functions
     func initViews() {
-        CommonUtils.setCorners(forViews: [vScanCode, vTestMovements])
-        CommonUtils.setShadow(forViews: [vScanCode, vTestMovements])
+        CommonUtils.setCorners(forViews: [vScanCode, vTestMovements, vStartMovements])
+        CommonUtils.setShadow(forViews: [vScanCode, vTestMovements, vStartMovements])
     }
 
     func initController() {
@@ -129,6 +130,21 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
             }
         }
     }
+    
+    func getTOTP() {
+        DispatchQueue.global().async {
+            do {
+                let secret = try self.keychain
+                    .authenticationPrompt("Authenticate please")
+                    .get("AuthMovementSecretKey")
+                
+                let totp = TOTPAlgorithm.testAlgorithm()
+                print("totp = ", totp)
+            } catch let error {
+                print("error storing data = ", error)
+            }
+        }
+    }
         
     // Auxiliary functions
     func checkQRString(str: String) -> Bool {
@@ -178,6 +194,10 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
         let storyboard = UIStoryboard(name: "TestMovementsController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestMovementsController") as UIViewController
         present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func onStartMovements(_ sender: Any) {
+        getTOTP()
     }
     
     @IBAction func onCloseCamera(_ sender: Any) {

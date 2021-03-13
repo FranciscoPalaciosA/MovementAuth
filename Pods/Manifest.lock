@@ -1,16 +1,20 @@
 PODS:
   - KeychainAccess (4.2.2)
+  - SwiftOTP (3.0.0)
 
 DEPENDENCIES:
   - KeychainAccess
+  - SwiftOTP
 
 SPEC REPOS:
   trunk:
     - KeychainAccess
+    - SwiftOTP
 
 SPEC CHECKSUMS:
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  SwiftOTP: ec3848f12a4541f29d96f6a0fe63dcbb8448d96f
 
-PODFILE CHECKSUM: 43e348b790763f6c7f262bd4bae876859513b813
+PODFILE CHECKSUM: 27ed53d8739be55510f3b430531de042236e7a40
 
 COCOAPODS: 1.10.1

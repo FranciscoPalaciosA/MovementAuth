@@ -58,7 +58,7 @@
                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="onMyCatalog:" destination="5aJ-ea-Khc" eventType="touchUpInside" id="lb2-es-Afs"/>
+                                            <action selector="onStartMovements:" destination="5aJ-ea-Khc" eventType="touchUpInside" id="spB-Iq-dtT"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -128,6 +128,7 @@
                         <outlet property="imgQRArea" destination="XMn-nN-shU" id="Rg3-cs-oFK"/>
                         <outlet property="vBtnsGuard" destination="Kfg-Mj-Etk" id="Y8u-Fn-X3W"/>
                         <outlet property="vScanCode" destination="HfW-Xm-bMO" id="1vT-1A-kdf"/>
+                        <outlet property="vStartMovements" destination="5sA-9W-eH7" id="Qe1-Lr-UPw"/>
                         <outlet property="vTestMovements" destination="Sfv-iO-zQt" id="71O-YB-qMI"/>
                     </connections>
                 </viewController>

@@ -7,5 +7,6 @@ target 'MovementAuth' do
 
   # Pods for MovementAuth
   pod 'KeychainAccess'
+  pod 'SwiftOTP'
 
 end
