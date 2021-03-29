@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (5.4.1)
   - KeychainAccess (4.2.2)
   - SwiftOTP (3.0.0)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.2)
   - KeychainAccess
   - SwiftOTP
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - KeychainAccess
     - SwiftOTP
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   SwiftOTP: ec3848f12a4541f29d96f6a0fe63dcbb8448d96f
 
-PODFILE CHECKSUM: 27ed53d8739be55510f3b430531de042236e7a40
+PODFILE CHECKSUM: 202ec9b612793ecdcb9f701551afedb56406278e
 
 COCOAPODS: 1.10.1

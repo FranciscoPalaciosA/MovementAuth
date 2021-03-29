@@ -8,5 +8,6 @@ target 'MovementAuth' do
   # Pods for MovementAuth
   pod 'KeychainAccess'
   pod 'SwiftOTP'
+  pod 'Alamofire', '~> 5.2'
 
 end
