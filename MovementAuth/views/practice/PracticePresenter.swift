@@ -11,7 +11,7 @@ import Alamofire
 class PracticePresenter: BasePresenter, PracticePresenterDelegate {
 
     var mView: PracticeViewDelegate
-    let baseURL = "https://movementauth-backend-npohk6ommq-uc.a.run.app/api/v1" // "http://0.0.0.0:8000/api/v1"
+    let baseURL = "https://movementauth-backend-npohk6ommq-uc.a.run.app/api/v1"
     
     init(v: PracticeViewDelegate) {
         self.mView = v
@@ -22,10 +22,19 @@ class PracticePresenter: BasePresenter, PracticePresenterDelegate {
     func checkMovement(movement: String, x_arr: [Double],
                      y_arr: [Double], z_arr: [Double],
                      w_arr: [Double], completion: @escaping (Bool) -> Void) {
-
-        AF.request("https://reqres.in/api/user?delay=2")
-            .responseString { response in
-                completion(false)
-        }
+        
+        let movData = MovementData(movement: movement,
+                                   movement_data: [
+                                    "x": x_arr,
+                                    "y": y_arr,
+                                    "z": z_arr,
+                                    "w": w_arr,
+                                   ])
+    
+        AF.request(baseURL + "/data/check-movement", method: .post,  parameters: movData, encoder: JSONParameterEncoder.default)
+            .responseJSON { response in
+                print(response)
+                completion(true)
+            }
     }
 }
