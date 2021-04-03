@@ -18,6 +18,10 @@
 		A186B1BC2617D57D0085A9B3 /* PracticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */; };
 		A186B1BF2617D5830085A9B3 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BE2617D5830085A9B3 /* Practice.swift */; };
 		A186B1C22617D58E0085A9B3 /* PracticeController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A186B1C12617D58E0085A9B3 /* PracticeController.storyboard */; };
+		A1AF4A312618E09300EBFB90 /* PasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF4A302618E09300EBFB90 /* PasswordController.swift */; };
+		A1AF4A342618E09C00EBFB90 /* PasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF4A332618E09C00EBFB90 /* PasswordPresenter.swift */; };
+		A1AF4A372618E0A400EBFB90 /* Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF4A362618E0A400EBFB90 /* Password.swift */; };
+		A1AF4A3A2618E0AF00EBFB90 /* PasswordController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1AF4A392618E0AF00EBFB90 /* PasswordController.storyboard */; };
 		A1BCA78C25FC1E3300282868 /* TOTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */; };
 		A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */; };
 		A1D126ED25F19F7700E86084 /* TestMovements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D126EC25F19F7700E86084 /* TestMovements.swift */; };
@@ -49,6 +53,10 @@
 		A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePresenter.swift; sourceTree = "<group>"; };
 		A186B1BE2617D5830085A9B3 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 		A186B1C12617D58E0085A9B3 /* PracticeController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeController.storyboard; sourceTree = "<group>"; };
+		A1AF4A302618E09300EBFB90 /* PasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordController.swift; sourceTree = "<group>"; };
+		A1AF4A332618E09C00EBFB90 /* PasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPresenter.swift; sourceTree = "<group>"; };
+		A1AF4A362618E0A400EBFB90 /* Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Password.swift; sourceTree = "<group>"; };
+		A1AF4A392618E0AF00EBFB90 /* PasswordController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PasswordController.storyboard; sourceTree = "<group>"; };
 		A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPAlgorithm.swift; sourceTree = "<group>"; };
 		A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestMovementsController.storyboard; sourceTree = "<group>"; };
 		A1D126EC25F19F7700E86084 /* TestMovements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMovements.swift; sourceTree = "<group>"; };
@@ -138,6 +146,17 @@
 			path = practice;
 			sourceTree = "<group>";
 		};
+		A1AF4A2F2618E07E00EBFB90 /* password */ = {
+			isa = PBXGroup;
+			children = (
+				A1AF4A302618E09300EBFB90 /* PasswordController.swift */,
+				A1AF4A332618E09C00EBFB90 /* PasswordPresenter.swift */,
+				A1AF4A362618E0A400EBFB90 /* Password.swift */,
+				A1AF4A392618E0AF00EBFB90 /* PasswordController.storyboard */,
+			);
+			path = password;
+			sourceTree = "<group>";
+		};
 		A1D126E825F19F4C00E86084 /* testMovements */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +180,7 @@
 		A1EA68F925EF3A4D008D0066 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A1AF4A2F2618E07E00EBFB90 /* password */,
 				A186B1B52617D5340085A9B3 /* practice */,
 				A1D126E825F19F4C00E86084 /* testMovements */,
 				A1EA68FB25EF3A92008D0066 /* base */,
@@ -251,6 +271,7 @@
 			files = (
 				A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */,
 				A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */,
+				A1AF4A3A2618E0AF00EBFB90 /* PasswordController.storyboard in Resources */,
 				A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */,
 				A186B1C22617D58E0085A9B3 /* PracticeController.storyboard in Resources */,
 				A13092B025EF205D007FF1BA /* Main.storyboard in Resources */,
@@ -315,14 +336,17 @@
 				A186B1BC2617D57D0085A9B3 /* PracticePresenter.swift in Sources */,
 				A1D126ED25F19F7700E86084 /* TestMovements.swift in Sources */,
 				A1EA690525EF3AD7008D0066 /* BaseController.swift in Sources */,
+				A1AF4A372618E0A400EBFB90 /* Password.swift in Sources */,
 				A13092A925EF205D007FF1BA /* AppDelegate.swift in Sources */,
 				A186B1BF2617D5830085A9B3 /* Practice.swift in Sources */,
 				A1EA690E25EF3B70008D0066 /* HomeController.swift in Sources */,
 				A1EA68FD25EF3A9A008D0066 /* Base.swift in Sources */,
 				A1EA68F625EF39EE008D0066 /* CommonUtils.swift in Sources */,
 				A1BCA78C25FC1E3300282868 /* TOTPAlgorithm.swift in Sources */,
+				A1AF4A312618E09300EBFB90 /* PasswordController.swift in Sources */,
 				A1EA690B25EF3B66008D0066 /* HomePresenter.swift in Sources */,
 				A1EA690825EF3B5C008D0066 /* Home.swift in Sources */,
+				A1AF4A342618E09C00EBFB90 /* PasswordPresenter.swift in Sources */,
 				A13092AB25EF205D007FF1BA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

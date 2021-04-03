@@ -68,20 +68,6 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
                 print("error storing data = ", error)
             }
         }
-        
-        /*
-         To recover
-         DispatchQueue.global().async {
-             do {
-                 let secret = try self.keychain
-                     .authenticationPrompt("Authenticate please")
-                     .get("AuthMovementSecretKey")
-                     print("Secret = ", secret!)
-             } catch let error {
-                 print("error storing data = ", error)
-             }
-         }
-         */
     }
 
     func scanCode(){
@@ -203,7 +189,9 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     }
     
     @IBAction func onStartMovements(_ sender: Any) {
-        getTOTP()
+        let storyboard = UIStoryboard(name: "PasswordController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PasswordController") as UIViewController
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onCloseCamera(_ sender: Any) {

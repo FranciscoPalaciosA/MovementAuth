@@ -62,7 +62,7 @@
                                             <constraint firstAttribute="height" constant="64" id="I8I-bT-E96"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                        <state key="normal" title="Start Movements">
+                                        <state key="normal" title="Get Password">
                                             <color key="titleColor" systemColor="systemGreenColor"/>
                                         </state>
                                         <connections>
