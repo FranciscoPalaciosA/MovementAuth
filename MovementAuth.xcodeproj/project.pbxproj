@@ -14,6 +14,10 @@
 		A13092B025EF205D007FF1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092AE25EF205D007FF1BA /* Main.storyboard */; };
 		A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13092B125EF205F007FF1BA /* Assets.xcassets */; };
 		A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092B325EF205F007FF1BA /* LaunchScreen.storyboard */; };
+		A186B1B72617D56B0085A9B3 /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1B62617D56B0085A9B3 /* PracticeController.swift */; };
+		A186B1BC2617D57D0085A9B3 /* PracticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */; };
+		A186B1BF2617D5830085A9B3 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BE2617D5830085A9B3 /* Practice.swift */; };
+		A186B1C22617D58E0085A9B3 /* PracticeController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A186B1C12617D58E0085A9B3 /* PracticeController.storyboard */; };
 		A1BCA78C25FC1E3300282868 /* TOTPAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */; };
 		A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */; };
 		A1D126ED25F19F7700E86084 /* TestMovements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D126EC25F19F7700E86084 /* TestMovements.swift */; };
@@ -41,6 +45,10 @@
 		A13092B125EF205F007FF1BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13092B425EF205F007FF1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13092B625EF205F007FF1BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A186B1B62617D56B0085A9B3 /* PracticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
+		A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePresenter.swift; sourceTree = "<group>"; };
+		A186B1BE2617D5830085A9B3 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		A186B1C12617D58E0085A9B3 /* PracticeController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PracticeController.storyboard; sourceTree = "<group>"; };
 		A1BCA78B25FC1E3300282868 /* TOTPAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPAlgorithm.swift; sourceTree = "<group>"; };
 		A1D126E925F19F6B00E86084 /* TestMovementsController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TestMovementsController.storyboard; sourceTree = "<group>"; };
 		A1D126EC25F19F7700E86084 /* TestMovements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMovements.swift; sourceTree = "<group>"; };
@@ -119,6 +127,17 @@
 			path = MovementAuth;
 			sourceTree = "<group>";
 		};
+		A186B1B52617D5340085A9B3 /* practice */ = {
+			isa = PBXGroup;
+			children = (
+				A186B1B62617D56B0085A9B3 /* PracticeController.swift */,
+				A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */,
+				A186B1BE2617D5830085A9B3 /* Practice.swift */,
+				A186B1C12617D58E0085A9B3 /* PracticeController.storyboard */,
+			);
+			path = practice;
+			sourceTree = "<group>";
+		};
 		A1D126E825F19F4C00E86084 /* testMovements */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +161,7 @@
 		A1EA68F925EF3A4D008D0066 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				A186B1B52617D5340085A9B3 /* practice */,
 				A1D126E825F19F4C00E86084 /* testMovements */,
 				A1EA68FB25EF3A92008D0066 /* base */,
 				A1EA68FA25EF3A63008D0066 /* home */,
@@ -232,6 +252,7 @@
 				A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */,
 				A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */,
 				A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */,
+				A186B1C22617D58E0085A9B3 /* PracticeController.storyboard in Resources */,
 				A13092B025EF205D007FF1BA /* Main.storyboard in Resources */,
 				A1EA691125EF3C55008D0066 /* HomeController.storyboard in Resources */,
 			);
@@ -288,11 +309,14 @@
 			files = (
 				A13092AD25EF205D007FF1BA /* ViewController.swift in Sources */,
 				A1D126F025F19F8800E86084 /* TestMovementsPresenter.swift in Sources */,
+				A186B1B72617D56B0085A9B3 /* PracticeController.swift in Sources */,
 				A1D126F425F19F9300E86084 /* TestMovementsController.swift in Sources */,
 				A1EA690125EF3AB4008D0066 /* BasePresenter.swift in Sources */,
+				A186B1BC2617D57D0085A9B3 /* PracticePresenter.swift in Sources */,
 				A1D126ED25F19F7700E86084 /* TestMovements.swift in Sources */,
 				A1EA690525EF3AD7008D0066 /* BaseController.swift in Sources */,
 				A13092A925EF205D007FF1BA /* AppDelegate.swift in Sources */,
+				A186B1BF2617D5830085A9B3 /* Practice.swift in Sources */,
 				A1EA690E25EF3B70008D0066 /* HomeController.swift in Sources */,
 				A1EA68FD25EF3A9A008D0066 /* Base.swift in Sources */,
 				A1EA68F625EF39EE008D0066 /* CommonUtils.swift in Sources */,

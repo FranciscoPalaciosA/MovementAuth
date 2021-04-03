@@ -16,7 +16,7 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     var mPresenter: HomePresenter?
     
     @IBOutlet weak var vScanCode: UIButton!
-    @IBOutlet weak var vTestMovements: UIButton!
+    @IBOutlet weak var VPracticeMovements: UIButton!
     @IBOutlet weak var vBtnsGuard: UIView!
     @IBOutlet weak var vStartMovements: UIButton!
     @IBOutlet weak var btnCloseCamera: UIButton!
@@ -43,8 +43,8 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     
     // Init Functions
     func initViews() {
-        CommonUtils.setCorners(forViews: [vScanCode, vTestMovements, vStartMovements])
-        CommonUtils.setShadow(forViews: [vScanCode, vTestMovements, vStartMovements])
+        CommonUtils.setCorners(forViews: [vScanCode, VPracticeMovements, vStartMovements])
+        CommonUtils.setShadow(forViews: [vScanCode, VPracticeMovements, vStartMovements])
     }
 
     func initController() {
@@ -190,7 +190,13 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
         scanCode()
     }
     
-    @IBAction func onTestMovements(_ sender: Any) {
+    @IBAction func onPracticeMovements(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "PracticeController", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PracticeController") as UIViewController
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func onGatherData(_ sender: Any) {
         let storyboard = UIStoryboard(name: "TestMovementsController", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "TestMovementsController") as UIViewController
         present(vc, animated: true, completion: nil)

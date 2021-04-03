@@ -1,61 +1,59 @@
 //
-//  TestMovementsController.swift
+//  PracticeController.swift
 //  MovementAuth
 //
-//  Created by Fran on 04/03/21.
+//  Created by Fran on 02/04/21.
 //
 
 import Foundation
-import CoreMotion
 import UIKit
+import CoreMotion
 
-class TestMovementsController: BaseController, TestMovementsViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PracticeController: BaseController, PracticeViewDelegate {
     
-    var mPresenter: TestMovementsPresenter?
+    var mPresenter: PracticePresenter?
     var motionManager = CMMotionManager()
     var queue: OperationQueue = OperationQueue()
     var isRecording = false
-    var movementOptions = ["Circle", "Triangle", "Infinity", "Diamond", "S_Shape"]
     
-    var movement = "Circle"
+    @IBOutlet weak var VAction: UIButton!
+    @IBOutlet weak var VExample: UIButton!
+    @IBOutlet weak var LMovementTitle: UILabel!
+    @IBOutlet weak var imgMovement: UIImageView!
+    @IBOutlet weak var LResult: UILabel!
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
     var x_arr: [Double] = [], y_arr: [Double] = [], z_arr: [Double] = [], w_arr: [Double] = []
-    
-    @IBOutlet weak var vAction: UIButton!
-    @IBOutlet weak var movementPicker: UIPickerView!
+    var movementOptions = ["Circle", "Triangle", "Square", "Infinity", "Diamond", "S_Shape", "No more movements"]
+    var movIndex = 0
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mPresenter = TestMovementsPresenter(v: self)
+        mPresenter = PracticePresenter(v: self)
         initViews()
         initController()
     }
     
     // Init Functions
     func initViews() {
-        self.movementPicker.delegate = self
-        self.movementPicker.dataSource = self
+        CommonUtils.setCorners(forViews: [VAction, VExample])
+        CommonUtils.setShadow(forViews: [VAction, VExample])
+        LResult.text = ""
     }
 
     func initController() {
-        print("If its available = ", motionManager.isDeviceMotionAvailable)
-        
+        showMovement()
     }
     
-    func printAcceleration(accel: CMAcceleration){
-        print(accel.x, accel.y, accel.z)
-    }
-    
+    // Primary Functions
     func printQuaternion(quat: CMQuaternion){
         x_arr.append(quat.x)
         y_arr.append(quat.y)
         z_arr.append(quat.z)
         w_arr.append(quat.w)
-        print(quat)
     }
     
-    
-    // Primary Functions
     func startQueuedUpdates() {
         if motionManager.isDeviceMotionAvailable {
           self.motionManager.deviceMotionUpdateInterval = 5.0 / 60.0
@@ -82,10 +80,43 @@ class TestMovementsController: BaseController, TestMovementsViewDelegate, UIPick
        }
     }
     
+    func checkMovement(){
+        // Allow re try
+        loader.startAnimating()
+        VAction.isEnabled = false
+        mPresenter?.checkMovement(movement: movementOptions[movIndex],
+                                  x_arr: x_arr,
+                                  y_arr: y_arr,
+                                  z_arr: z_arr,
+                                  w_arr: w_arr){ success in
+            if success {
+                self.LResult.text = "Excellent!"
+                self.VAction.setTitle("Next movement", for: .normal)
+                self.movIndex += 1
+                self.showMovement()
+
+            } else {
+                self.LResult.text = "not successful"
+                self.VAction.setTitle("Retry movement", for: .normal)
+            }
+            self.loader.stopAnimating()
+            self.VAction.isEnabled = true
+        }
+    }
+    
    
     // Auxiliar Functions
-    static func getController() -> TestMovementsController{
-        return CommonUtils.getController(withId: "TestMovementsController") as! TestMovementsController
+    func showMovement() {
+        if(movIndex >= 6) {
+            VAction.isHidden = true
+        }
+        LMovementTitle.text = movementOptions[movIndex]
+        imgMovement.image = UIImage(named: movementOptions[movIndex] + ".png")
+        // Change image too
+    }
+    
+    static func getController() -> PracticeController{
+        return CommonUtils.getController(withId: "PracticeController") as! PracticeController
     }
     
     func resetDataArrays() {
@@ -98,45 +129,25 @@ class TestMovementsController: BaseController, TestMovementsViewDelegate, UIPick
     // Click handlers
     @IBAction func onClick(_ sender: Any) {
         if(!isRecording){
-            vAction.setTitle("End movement", for: .normal)
+            VAction.setTitle("End movement", for: .normal)
             startQueuedUpdates()
-            movementPicker.isHidden = true
+            LResult.text = ""
             
         } else {
-            vAction.setTitle("Start movement", for: .normal)
             motionManager.stopDeviceMotionUpdates()
-            movementPicker.isHidden = false
-            mPresenter?.saveDataOnDB(movement: movement, x_arr: x_arr, y_arr: y_arr, z_arr: z_arr, w_arr: w_arr)
+            checkMovement()
             resetDataArrays()
         }
         isRecording = !isRecording
 
     }
     
+    @IBAction func onSeeExample(_ sender: Any) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    // Number of columns of data
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    // The number of rows of data
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return movementOptions.count
-    }
-    
-    // The data to return fopr the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return movementOptions[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        // This method is triggered whenever the user makes a change to the picker selection.
-        // The parameter named row and component represents what was selected.
-        movement = movementOptions[row]
     }
     
 }
