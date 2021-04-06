@@ -96,7 +96,7 @@ class PracticeController: BaseController, PracticeViewDelegate {
                 self.showMovement()
 
             } else {
-                self.LResult.text = "not successful"
+                self.LResult.text = "Oops, please try again..."
                 self.VAction.setTitle("Retry movement", for: .normal)
             }
             self.loader.stopAnimating()

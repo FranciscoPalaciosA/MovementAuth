@@ -11,7 +11,7 @@ import Alamofire
 class PracticePresenter: BasePresenter, PracticePresenterDelegate {
 
     var mView: PracticeViewDelegate
-    let baseURL = "https://movementauth-backend-npohk6ommq-uc.a.run.app/api/v1"
+    let baseURL = "https://movementauth.df.r.appspot.com/api/v1"
     
     init(v: PracticeViewDelegate) {
         self.mView = v
@@ -33,8 +33,13 @@ class PracticePresenter: BasePresenter, PracticePresenterDelegate {
     
         AF.request(baseURL + "/data/check-movement", method: .post,  parameters: movData, encoder: JSONParameterEncoder.default)
             .responseJSON { response in
-                print(response)
-                completion(true)
+                switch response.result {
+                         case .success:
+                            let bool = response.value as! Bool
+                            completion(bool)
+                         case .failure(let error):
+                            completion(false)
+                         }
             }
     }
 }

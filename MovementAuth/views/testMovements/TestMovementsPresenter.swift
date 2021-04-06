@@ -17,7 +17,7 @@ struct MovementData: Encodable {
 class TestMovementsPresenter: BasePresenter, TestMovementsPresenterDelegate {
 
     var mView: TestMovementsViewDelegate
-    let baseURL = "https://movementauth-backend-npohk6ommq-uc.a.run.app/api/v1" // "http://0.0.0.0:8000/api/v1"
+    let baseURL = "https://movementauth.df.r.appspot.com/api/v1" // "http://0.0.0.0:8000/api/v1"
     
     init(v: TestMovementsViewDelegate) {
         self.mView = v
