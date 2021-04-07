@@ -10,13 +10,15 @@ import SwiftOTP
 
 class TOTPAlgorithm {
         
-    static var TIME_INTERVAL = 30
+    static var TIME_INTERVAL = 120
     
     class func getTOTP(secretKey: String,
                        randomSeq: [String],
                        intervals: Int = Int(NSDate().timeIntervalSince1970)) -> String {
         var secret = secretKey.replacingOccurrences(of: randomSeq[0], with: randomSeq[1])
-        secret = secretKey.replacingOccurrences(of: randomSeq[2], with: randomSeq[3])
+        secret = secret.replacingOccurrences(of: randomSeq[2], with: randomSeq[3])
+        
+        print("Time interval = ", intervals)
         
         guard let data = base32DecodeToData(secret) else { return "ERROR" }
         if let totp = TOTP(secret: data,
@@ -30,10 +32,14 @@ class TOTPAlgorithm {
     }
         
     class func testAlgorithm() -> String {
-        let SECRET_KEY = "MQ2TGZLEME3WCNRTG5RTSOLDMM3WMYRVGY3GIOJWMU4WMYJRGA4WEZRRGVRTINZYGQYTAYJTMY2WKYRUMQ2GGNDFGI3GGZBQHAYWMNQ="
-        let RANDOM_SEQUENCE = ["1", "3", "A", "D"]
+        let SECRET_KEY = "MM4TIYZXGFSTMMJXGEZDAYTGGQ4TGYJTGYYTMZLEMMZDEMJTGUZDIZJYMNSTCZLCGUZDKNTEMI2DAYRWGEYGIZRRG44TOY3GMJRDMOI="
+        let RANDOM_SEQUENCE = ["F",
+                               "Y",
+                               "4",
+                               "2"]
         //let TIME=240
 
         return getTOTP(secretKey: SECRET_KEY, randomSeq: RANDOM_SEQUENCE)
     }
 }
+

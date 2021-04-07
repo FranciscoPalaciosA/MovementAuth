@@ -43,39 +43,4 @@ class TestMovementsPresenter: BasePresenter, TestMovementsPresenterDelegate {
                          }
             }
     }
-    
-    
-    /*
-     // prepare json data
-     let json: [String: Any] = ["title": "ABC",
-                                "dict": ["1":"First", "2":"Second"]]
-
-     let jsonData = try? JSONSerialization.data(withJSONObject: json)
-     
-     
-     // Prepare URL
-     let url = URL(string: "https://jsonplaceholder.typicode.com/todos")
-     guard let requestUrl = url else { fatalError() }
-     // Prepare URL Request Object
-     var request = URLRequest(url: requestUrl)
-     request.httpMethod = "POST"
-      
-     // insert json data to the request
-     request.httpBody = jsonData
-     // Perform HTTP Request
-     let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-             
-             // Check for Error
-             if let error = error {
-                 print("Error took place \(error)")
-                 return
-             }
-      
-             // Convert HTTP Response Data to a String
-             if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                 print("Response data string:\n \(dataString)")
-             }
-     }
-     task.resume()
-     */
 }

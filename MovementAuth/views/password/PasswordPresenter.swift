@@ -8,10 +8,14 @@
 import Foundation
 import Alamofire
 
+struct AllMovements: Encodable {
+    let movement_data: [Movement]
+}
+
 class PasswordPresenter: BasePresenter, PasswordPresenterDelegate {
 
     var mView: PasswordViewDelegate
-    let baseURL = "https://movementauth-backend-npohk6ommq-uc.a.run.app/api/v1"
+    let baseURL = "https://movementauth.df.r.appspot.com/api/v1"
     
     init(v: PasswordViewDelegate) {
         self.mView = v
@@ -20,14 +24,11 @@ class PasswordPresenter: BasePresenter, PasswordPresenterDelegate {
     
     
     func sendAllMovements(allMovements: [Movement], completion: @escaping ([String]) -> Void) {
+        let movData = AllMovements(movement_data: allMovements)
+        AF.request(baseURL + "/data/get-sequence", method: .post,  parameters: movData, encoder: JSONParameterEncoder.default) .responseJSON { response in
+            completion(response.value as! [String])
+        }
         
-        print(allMovements)
-    
-        /*AF.request(baseURL + "/data/get-shapes", method: .post,  parameters: allMovements, encoder: JSONParameterEncoder.default)
-            .responseJSON { response in
-                print(response)
-                completion(true)
-            }*/
-        completion(["1", "3", "A", "D"])
+        
     }
 }

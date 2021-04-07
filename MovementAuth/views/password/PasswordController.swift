@@ -11,7 +11,10 @@ import CoreMotion
 import KeychainAccess
 
 struct Movement: Encodable {
-    let movement_data: [String: [Double]]
+    let x: [Double]
+    let y: [Double]
+    let z: [Double]
+    let w: [Double]
 }
 
 class PasswordController: BaseController, PasswordViewDelegate {
@@ -24,6 +27,8 @@ class PasswordController: BaseController, PasswordViewDelegate {
     @IBOutlet weak var vAction: UIButton!
     @IBOutlet weak var vGetPassword: UIButton!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    @IBOutlet weak var vTOTP: UIView!
+    @IBOutlet weak var LTOTP: UILabel!
     
     var x_arr: [Double] = [], y_arr: [Double] = [], z_arr: [Double] = [], w_arr: [Double] = []
     var allMovements: [Movement] = []
@@ -75,14 +80,19 @@ class PasswordController: BaseController, PasswordViewDelegate {
                 let secret = try self.keychain
                     .authenticationPrompt("Authenticate please")
                     .get("AuthMovementSecretKey")
+                DispatchQueue.main.sync {
+                    let totp = TOTPAlgorithm.getTOTP(secretKey: secret!, randomSeq: randomSequence)
+                    print("TOTP = ", totp)
+                    self.LTOTP.text = totp
+                    self.vTOTP.isHidden = false
+                    self.vAction.setTitle("Restart", for: .normal)
+                }
                 
-                let totp = TOTPAlgorithm.getTOTP(secretKey: secret!, randomSeq: randomSequence)
-                print("totp = ", totp)
-                // Show TOTP
             } catch let error {
                 print("error storing data = ", error)
             }
         }
+        
     }
     
     func getPassword() {
@@ -95,25 +105,25 @@ class PasswordController: BaseController, PasswordViewDelegate {
             
             self.loader.stopAnimating()
             self.vAction.isEnabled = true
+            
+            print("Sequence = ", mSequence)
+            self.getTOTP(randomSequence: mSequence)
         }
-        
-        getTOTP(randomSequence: mSequence)
-        
     }
     
     func buildMovementData(){
-        let movData = Movement(movement_data: [
-                                    "x": x_arr,
-                                    "y": y_arr,
-                                    "z": z_arr,
-                                    "w": w_arr,
-                                   ])
+        let movData = Movement(x: x_arr, y: y_arr, z: z_arr, w: w_arr)
         allMovements.append(movData)
     }
    
     // Auxiliar Functions
     static func getController() -> PracticeController{
         return CommonUtils.getController(withId: "PracticeController") as! PracticeController
+    }
+    
+    func restartAll() {
+        resetDataArrays()
+        vAction.setTitle("Start movement", for: .normal)
     }
     
     func resetDataArrays() {
@@ -126,6 +136,10 @@ class PasswordController: BaseController, PasswordViewDelegate {
     // Click handlers
     
     @IBAction func onAction(_ sender: Any) {
+        if(vAction.currentTitle == "Restart") {
+            restartAll()
+        }
+        
         if(!isRecording){
             vAction.setTitle("End movement", for: .normal)
             startQueuedUpdates()
@@ -142,6 +156,16 @@ class PasswordController: BaseController, PasswordViewDelegate {
     @IBAction func onGetPassword(_ sender: Any) {
         if(allMovements.count == 0){
             showMessage("Make some movements first")
+            getTOTP(randomSequence: ["F",
+                                     "Y",
+                                     "4",
+                                     "2"])
+            return
+        }
+        
+        if(allMovements.count != 4){
+            showMessage("Please make 4 movements")
+            return
         }
         getPassword()
     }
