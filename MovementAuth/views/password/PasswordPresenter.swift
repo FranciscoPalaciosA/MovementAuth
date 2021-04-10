@@ -15,7 +15,7 @@ struct AllMovements: Encodable {
 class PasswordPresenter: BasePresenter, PasswordPresenterDelegate {
 
     var mView: PasswordViewDelegate
-    let baseURL = "https://movementauth.df.r.appspot.com/api/v1"
+    let baseURL = "https://movementauth.df.r.appspot.com/api/v1" // "http://192.168.1.101:8000/api/v1"
     
     init(v: PasswordViewDelegate) {
         self.mView = v
@@ -26,6 +26,7 @@ class PasswordPresenter: BasePresenter, PasswordPresenterDelegate {
     func sendAllMovements(allMovements: [Movement], completion: @escaping ([String]) -> Void) {
         let movData = AllMovements(movement_data: allMovements)
         AF.request(baseURL + "/data/get-sequence", method: .post,  parameters: movData, encoder: JSONParameterEncoder.default) .responseJSON { response in
+            
             completion(response.value as! [String])
         }
         

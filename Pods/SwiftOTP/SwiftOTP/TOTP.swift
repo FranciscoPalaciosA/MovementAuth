@@ -69,6 +69,8 @@ public struct TOTP {
 	public func generate(secondsPast1970: Int) -> String? {
 		guard validateTime(time: secondsPast1970) else { return nil }
 		let counterValue = Int(floor(Double(secondsPast1970) / Double(timeInterval)))
+        print("Time Interval = ", counterValue)
+
 		return Generator.shared.generateOTP(secret: secret, algorithm: algorithm, counter: UInt64(counterValue), digits: digits)
 	}
 

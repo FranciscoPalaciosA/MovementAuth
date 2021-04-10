@@ -123,6 +123,8 @@ class PasswordController: BaseController, PasswordViewDelegate {
     
     func restartAll() {
         resetDataArrays()
+        allMovements = []
+        vTOTP.isHidden = true
         vAction.setTitle("Start movement", for: .normal)
     }
     
@@ -138,6 +140,7 @@ class PasswordController: BaseController, PasswordViewDelegate {
     @IBAction func onAction(_ sender: Any) {
         if(vAction.currentTitle == "Restart") {
             restartAll()
+            return;
         }
         
         if(!isRecording){
@@ -151,15 +154,17 @@ class PasswordController: BaseController, PasswordViewDelegate {
             resetDataArrays()
         }
         isRecording = !isRecording
+
+        
     }
     
     @IBAction func onGetPassword(_ sender: Any) {
         if(allMovements.count == 0){
             showMessage("Make some movements first")
             getTOTP(randomSequence: ["F",
-                                     "Y",
-                                     "4",
-                                     "2"])
+                                     "F",
+                                     "F",
+                                     "F"])
             return
         }
         

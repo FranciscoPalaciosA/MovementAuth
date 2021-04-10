@@ -18,7 +18,8 @@ class TOTPAlgorithm {
         var secret = secretKey.replacingOccurrences(of: randomSeq[0], with: randomSeq[1])
         secret = secret.replacingOccurrences(of: randomSeq[2], with: randomSeq[3])
         
-        print("Time interval = ", intervals)
+        //print("Secret = ", secret)
+        //print("Random Seq = ", randomSeq)
         
         guard let data = base32DecodeToData(secret) else { return "ERROR" }
         if let totp = TOTP(secret: data,
@@ -26,6 +27,7 @@ class TOTPAlgorithm {
                            timeInterval: TIME_INTERVAL,
                            algorithm: .sha1) {
             let otpString = totp.generate(secondsPast1970: intervals)
+            print("Full Time = ", intervals)
             return otpString!
         }
         return ""
