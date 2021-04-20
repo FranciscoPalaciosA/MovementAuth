@@ -27,7 +27,6 @@ class TOTPAlgorithm {
                            timeInterval: TIME_INTERVAL,
                            algorithm: .sha1) {
             let otpString = totp.generate(secondsPast1970: intervals)
-            print("Full Time = ", intervals)
             return otpString!
         }
         return ""

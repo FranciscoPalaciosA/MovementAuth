@@ -82,7 +82,6 @@ class PasswordController: BaseController, PasswordViewDelegate {
                     .get("AuthMovementSecretKey")
                 DispatchQueue.main.sync {
                     let totp = TOTPAlgorithm.getTOTP(secretKey: secret!, randomSeq: randomSequence)
-                    print("TOTP = ", totp)
                     self.LTOTP.text = totp
                     self.vTOTP.isHidden = false
                     self.vAction.setTitle("Restart", for: .normal)
@@ -106,7 +105,6 @@ class PasswordController: BaseController, PasswordViewDelegate {
             self.loader.stopAnimating()
             self.vAction.isEnabled = true
             
-            print("Sequence = ", mSequence)
             self.getTOTP(randomSequence: mSequence)
         }
     }
