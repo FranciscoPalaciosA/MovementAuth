@@ -29,6 +29,8 @@ class PasswordController: BaseController, PasswordViewDelegate {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     @IBOutlet weak var vTOTP: UIView!
     @IBOutlet weak var LTOTP: UILabel!
+    @IBOutlet weak var LSeq: UILabel!
+    
     
     var x_arr: [Double] = [], y_arr: [Double] = [], z_arr: [Double] = [], w_arr: [Double] = []
     var allMovements: [Movement] = []
@@ -101,7 +103,7 @@ class PasswordController: BaseController, PasswordViewDelegate {
         vAction.isEnabled = false
         mPresenter?.sendAllMovements(allMovements: allMovements) { sequence in
             mSequence = sequence
-            
+            self.LSeq.text = mSequence.joined(separator: ", ")
             self.loader.stopAnimating()
             self.vAction.isEnabled = true
             

@@ -15,7 +15,7 @@ struct AllMovements: Encodable {
 class PasswordPresenter: BasePresenter, PasswordPresenterDelegate {
 
     var mView: PasswordViewDelegate
-    let baseURL = "https://movementauth.df.r.appspot.com/api/v1" // "http://192.168.1.101:8000/api/v1"
+    let baseURL = "https://movementauth.df.r.appspot.com/api/v1" // "http://192.168.1.104:8000/api/v1" // 
     
     init(v: PasswordViewDelegate) {
         self.mView = v

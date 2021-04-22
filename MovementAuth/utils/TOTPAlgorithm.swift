@@ -18,8 +18,8 @@ class TOTPAlgorithm {
         var secret = secretKey.replacingOccurrences(of: randomSeq[0], with: randomSeq[1])
         secret = secret.replacingOccurrences(of: randomSeq[2], with: randomSeq[3])
         
-        //print("Secret = ", secret)
-        //print("Random Seq = ", randomSeq)
+        print("Secret = ", secret)
+        print("Random Seq = ", randomSeq)
         
         guard let data = base32DecodeToData(secret) else { return "ERROR" }
         if let totp = TOTP(secret: data,
