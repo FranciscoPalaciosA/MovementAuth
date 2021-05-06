@@ -14,6 +14,12 @@
 		A13092B025EF205D007FF1BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092AE25EF205D007FF1BA /* Main.storyboard */; };
 		A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13092B125EF205F007FF1BA /* Assets.xcassets */; };
 		A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13092B325EF205F007FF1BA /* LaunchScreen.storyboard */; };
+		A164B70A26339D050063F936 /* mov-Triangle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B70426339D030063F936 /* mov-Triangle.mp4 */; };
+		A164B70B26339D050063F936 /* mov-Diamond.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B70526339D040063F936 /* mov-Diamond.mp4 */; };
+		A164B70C26339D050063F936 /* mov-S_Shape.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B70626339D040063F936 /* mov-S_Shape.mp4 */; };
+		A164B70D26339D050063F936 /* mov-Circle.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B70726339D040063F936 /* mov-Circle.mp4 */; };
+		A164B70E26339D050063F936 /* mov-Square.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B70826339D050063F936 /* mov-Square.mp4 */; };
+		A164B7122633A0C40063F936 /* mov-Infinity.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = A164B7112633A0C40063F936 /* mov-Infinity.mp4 */; };
 		A186B1B72617D56B0085A9B3 /* PracticeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1B62617D56B0085A9B3 /* PracticeController.swift */; };
 		A186B1BC2617D57D0085A9B3 /* PracticePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */; };
 		A186B1BF2617D5830085A9B3 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A186B1BE2617D5830085A9B3 /* Practice.swift */; };
@@ -49,6 +55,12 @@
 		A13092B125EF205F007FF1BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A13092B425EF205F007FF1BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A13092B625EF205F007FF1BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A164B70426339D030063F936 /* mov-Triangle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-Triangle.mp4"; sourceTree = "<group>"; };
+		A164B70526339D040063F936 /* mov-Diamond.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-Diamond.mp4"; sourceTree = "<group>"; };
+		A164B70626339D040063F936 /* mov-S_Shape.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-S_Shape.mp4"; sourceTree = "<group>"; };
+		A164B70726339D040063F936 /* mov-Circle.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-Circle.mp4"; sourceTree = "<group>"; };
+		A164B70826339D050063F936 /* mov-Square.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-Square.mp4"; sourceTree = "<group>"; };
+		A164B7112633A0C40063F936 /* mov-Infinity.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "mov-Infinity.mp4"; sourceTree = "<group>"; };
 		A186B1B62617D56B0085A9B3 /* PracticeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeController.swift; sourceTree = "<group>"; };
 		A186B1BB2617D57D0085A9B3 /* PracticePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePresenter.swift; sourceTree = "<group>"; };
 		A186B1BE2617D5830085A9B3 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
@@ -122,6 +134,7 @@
 		A13092A725EF205D007FF1BA /* MovementAuth */ = {
 			isa = PBXGroup;
 			children = (
+				A164B6FC263372CB0063F936 /* assets */,
 				A1EA68F925EF3A4D008D0066 /* views */,
 				A1EA68F425EF39D8008D0066 /* utils */,
 				A13092A825EF205D007FF1BA /* AppDelegate.swift */,
@@ -133,6 +146,19 @@
 				A13092B625EF205F007FF1BA /* Info.plist */,
 			);
 			path = MovementAuth;
+			sourceTree = "<group>";
+		};
+		A164B6FC263372CB0063F936 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				A164B70726339D040063F936 /* mov-Circle.mp4 */,
+				A164B70526339D040063F936 /* mov-Diamond.mp4 */,
+				A164B7112633A0C40063F936 /* mov-Infinity.mp4 */,
+				A164B70626339D040063F936 /* mov-S_Shape.mp4 */,
+				A164B70826339D050063F936 /* mov-Square.mp4 */,
+				A164B70426339D030063F936 /* mov-Triangle.mp4 */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 		A186B1B52617D5340085A9B3 /* practice */ = {
@@ -271,11 +297,17 @@
 			files = (
 				A1D126EA25F19F6B00E86084 /* TestMovementsController.storyboard in Resources */,
 				A13092B525EF205F007FF1BA /* LaunchScreen.storyboard in Resources */,
+				A164B70C26339D050063F936 /* mov-S_Shape.mp4 in Resources */,
 				A1AF4A3A2618E0AF00EBFB90 /* PasswordController.storyboard in Resources */,
 				A13092B225EF205F007FF1BA /* Assets.xcassets in Resources */,
+				A164B70B26339D050063F936 /* mov-Diamond.mp4 in Resources */,
 				A186B1C22617D58E0085A9B3 /* PracticeController.storyboard in Resources */,
+				A164B70E26339D050063F936 /* mov-Square.mp4 in Resources */,
+				A164B70A26339D050063F936 /* mov-Triangle.mp4 in Resources */,
 				A13092B025EF205D007FF1BA /* Main.storyboard in Resources */,
+				A164B70D26339D050063F936 /* mov-Circle.mp4 in Resources */,
 				A1EA691125EF3C55008D0066 /* HomeController.storyboard in Resources */,
+				A164B7122633A0C40063F936 /* mov-Infinity.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,8 +528,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 8593R643V2;
 				INFOPLIST_FILE = MovementAuth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -516,8 +550,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 8593R643V2;
 				INFOPLIST_FILE = MovementAuth/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

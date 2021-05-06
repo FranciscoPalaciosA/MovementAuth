@@ -19,11 +19,12 @@ class PracticePresenter: BasePresenter, PracticePresenterDelegate {
     }
     
     
-    func checkMovement(movement: String, x_arr: [Double],
+    func checkMovement(userId: String, movement: String, x_arr: [Double],
                      y_arr: [Double], z_arr: [Double],
                      w_arr: [Double], completion: @escaping (Bool) -> Void) {
         
-        let movData = MovementData(movement: movement,
+        let movData = MovementData(userId: userId,
+                                   movement: movement,
                                    movement_data: [
                                     "x": x_arr,
                                     "y": y_arr,

@@ -7,7 +7,10 @@
 
 import Foundation
 import UIKit
+import AVKit
+import AVFoundation
 import CoreMotion
+import KeychainAccess
 
 class PracticeController: BaseController, PracticeViewDelegate {
     
@@ -17,6 +20,7 @@ class PracticeController: BaseController, PracticeViewDelegate {
     var isRecording = false
     
     @IBOutlet weak var VAction: UIButton!
+    @IBOutlet weak var VRestart: UIButton!
     @IBOutlet weak var VExample: UIButton!
     @IBOutlet weak var LMovementTitle: UILabel!
     @IBOutlet weak var imgMovement: UIImageView!
@@ -24,9 +28,11 @@ class PracticeController: BaseController, PracticeViewDelegate {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var x_arr: [Double] = [], y_arr: [Double] = [], z_arr: [Double] = [], w_arr: [Double] = []
-    var movementOptions = ["Circle", "Triangle", "Square", "Infinity", "Diamond", "S_Shape", "No more movements"]
+    var movementOptions = ["Circle", "Triangle", "Square", "Infinity", "Diamond", "S_Shape"]
     var movIndex = 0
+    var userId = ""
     
+    let keychain = Keychain(service: "com.frantastic.MovementAuth")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +43,36 @@ class PracticeController: BaseController, PracticeViewDelegate {
     
     // Init Functions
     func initViews() {
-        CommonUtils.setCorners(forViews: [VAction, VExample])
-        CommonUtils.setShadow(forViews: [VAction, VExample])
+        CommonUtils.setCorners(forViews: [VAction, VExample, VRestart])
+        CommonUtils.setShadow(forViews: [VAction, VExample, VRestart])
         LResult.text = ""
     }
 
     func initController() {
+        movementOptions = movementOptions.shuffled()
         showMovement()
+        getUserID()
     }
     
     // Primary Functions
+    func getUserID(){
+        DispatchQueue.global().async {
+            do {
+                if let uid = try self.keychain
+                    .authenticationPrompt("Authenticate please")
+                    .get("AuthMovementUserId") {
+                    self.userId = uid
+                } else {
+                    self.showMessage("Scan your QR Code. If you have scanned it before, please go back to https://movementauth.web.app/ and create your account again.")
+                }
+                
+                
+            } catch let error {
+                print("error storing data = ", error)
+            }
+        }
+    }
+    
     func printQuaternion(quat: CMQuaternion){
         x_arr.append(quat.x)
         y_arr.append(quat.y)
@@ -84,7 +110,7 @@ class PracticeController: BaseController, PracticeViewDelegate {
         // Allow re try
         loader.startAnimating()
         VAction.isEnabled = false
-        mPresenter?.checkMovement(movement: movementOptions[movIndex],
+        mPresenter?.checkMovement(userId: userId, movement: movementOptions[movIndex],
                                   x_arr: x_arr,
                                   y_arr: y_arr,
                                   z_arr: z_arr,
@@ -92,9 +118,8 @@ class PracticeController: BaseController, PracticeViewDelegate {
             if success {
                 self.LResult.text = "Excellent!"
                 self.VAction.setTitle("Next movement", for: .normal)
-                self.movIndex += 1
-                self.showMovement()
-
+            
+                
             } else {
                 self.LResult.text = "Oops, please try again..."
                 self.VAction.setTitle("Retry movement", for: .normal)
@@ -107,12 +132,8 @@ class PracticeController: BaseController, PracticeViewDelegate {
    
     // Auxiliar Functions
     func showMovement() {
-        if(movIndex >= 6) {
-            VAction.isHidden = true
-        }
         LMovementTitle.text = movementOptions[movIndex]
         imgMovement.image = UIImage(named: movementOptions[movIndex] + ".png")
-        // Change image too
     }
     
     static func getController() -> PracticeController{
@@ -126,23 +147,64 @@ class PracticeController: BaseController, PracticeViewDelegate {
         w_arr = []
     }
     
+    func showCurrentMoveExample() {
+        let player = AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "mov-"+movementOptions[movIndex], ofType: "mp4")!))
+        let vc = AVPlayerViewController()
+        vc.player = player
+        present(vc, animated: true)
+        vc.player?.play()
+    }
+    
     // Click handlers
     @IBAction func onClick(_ sender: Any) {
+        if(VAction.title(for: .normal) == "Next movement") {
+            if(movIndex >= movementOptions.count - 1) {
+                LMovementTitle.text = "No more movements to practice"
+                LResult.text = "Go back to main menu"
+                VExample.isHidden = true
+                VAction.isHidden = true
+                return
+            }
+            
+            movIndex += 1
+            showMovement()
+            LResult.text = ""
+            VAction.setTitle("Start movement", for: .normal)
+            return
+        }
+        
+        if(!isRecording && VAction.title(for: .normal) != "Next movement"){
+            VRestart.isHidden = false
+        }
+        
         if(!isRecording){
             VAction.setTitle("End movement", for: .normal)
             startQueuedUpdates()
             LResult.text = ""
-            
         } else {
             motionManager.stopDeviceMotionUpdates()
             checkMovement()
             resetDataArrays()
+            VRestart.isHidden = true
         }
         isRecording = !isRecording
 
     }
     
+    func restart() {
+        motionManager.stopDeviceMotionUpdates()
+        resetDataArrays()
+        VAction.setTitle("Start movement", for: .normal)
+        VRestart.isHidden = true
+        isRecording = !isRecording
+    }
+    
+    @IBAction func onRestart(_ sender: Any) {
+        restart()
+    }
+    
     @IBAction func onSeeExample(_ sender: Any) {
+        showCurrentMoveExample()
     }
     
     override func didReceiveMemoryWarning() {

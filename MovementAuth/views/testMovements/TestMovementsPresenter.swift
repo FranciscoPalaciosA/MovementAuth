@@ -10,6 +10,7 @@ import CoreMotion
 import Alamofire
 
 struct MovementData: Encodable {
+    let userId: String
     let movement: String
     let movement_data: [String: [Double]]
 }
@@ -25,7 +26,7 @@ class TestMovementsPresenter: BasePresenter, TestMovementsPresenterDelegate {
     }
     
     func saveDataOnDB(movement: String, x_arr: [Double], y_arr: [Double], z_arr: [Double], w_arr: [Double]) {
-        let movData = MovementData(movement: movement,
+        let movData = MovementData(userId: "", movement: movement,
                                    movement_data: [
                                     "x": x_arr,
                                     "y": y_arr,

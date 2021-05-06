@@ -14,7 +14,7 @@ protocol PracticeViewDelegate: BaseViewDelegate {
 
 protocol PracticePresenterDelegate: BasePresenterDelegate{
     
-    func checkMovement(movement: String, x_arr: [Double],
+    func checkMovement(userId: String, movement: String, x_arr: [Double],
                        y_arr: [Double], z_arr: [Double],
                        w_arr: [Double], completion: @escaping (Bool) -> Void)
 }

@@ -31,6 +31,7 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
     var sessionStarted = false
     var userEmail = ""
     var userSecret = ""
+    var userId = ""
     
     let keychain = Keychain(service: "com.frantastic.MovementAuth")
     
@@ -64,6 +65,10 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
                 try self.keychain
                     .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
                     .set(self.userEmail, key: "AuthMovementEmail")
+                
+                try self.keychain
+                    .accessibility(.whenPasscodeSetThisDeviceOnly, authenticationPolicy: .userPresence)
+                    .set(self.userId, key: "AuthMovementUserId")
             } catch let error {
                 print("error storing data = ", error)
             }
@@ -134,8 +139,9 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
         
     // Auxiliary functions
     func checkQRString(str: String) -> Bool {
-        let elements = str.components(separatedBy: "-")
-        if(elements.count != 2){
+        let elements = str.components(separatedBy: "?")
+        print(elements)
+        if(elements.count != 3){
             return false
         }
         
@@ -148,8 +154,14 @@ class HomeController: BaseController, HomeViewDelegate, AVCaptureMetadataOutputO
         if(secret.count != 2 || secret[0] != "secret"){
             return false
         }
+        
+        let uid = elements[2].components(separatedBy: ":")
+        if(uid.count != 2 || uid[0] != "uid"){
+            return false
+        }
         userEmail = email[1]
         userSecret = secret[1]
+        userId = uid[1]
         return true
     }
     

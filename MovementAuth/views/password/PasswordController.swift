@@ -68,12 +68,11 @@ class PasswordController: BaseController, PasswordViewDelegate {
           self.motionManager.showsDeviceMovementDisplay = true
           self.motionManager.startDeviceMotionUpdates(using: .xArbitraryZVertical,
                    to: self.queue, withHandler: { (data, error) in
-             // Make sure the data is valid before accessing it.
              if let validData = data {
                 self.printQuaternion(quat: validData.attitude.quaternion)
              }
           })
-       }
+        }
     }
     
     func getTOTP(randomSequence: [String]) {
@@ -159,14 +158,14 @@ class PasswordController: BaseController, PasswordViewDelegate {
     }
     
     @IBAction func onGetPassword(_ sender: Any) {
-        if(allMovements.count == 0){
+        /*if(allMovements.count == 0){
             showMessage("Make some movements first")
             getTOTP(randomSequence: ["F",
                                      "F",
                                      "F",
                                      "F"])
             return
-        }
+        }*/
         
         if(allMovements.count != 4){
             showMessage("Please make 4 movements")

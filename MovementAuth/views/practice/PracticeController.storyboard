@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -77,6 +77,17 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="cWp-cX-oq6">
                                 <rect key="frame" x="188.5" y="599.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pth-0x-cAD" userLabel="VRestart">
+                                <rect key="frame" x="62" y="680" width="290" height="40"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.15686274510000001" green="0.7843137255" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onRestart:" destination="JnQ-Xn-fJb" eventType="touchUpInside" id="0ge-62-QA1"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RESULT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWU-ng-6yd">
                                 <rect key="frame" x="20" y="611.5" width="374" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -84,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVN-Wq-YDw" userLabel="VAction">
-                                <rect key="frame" x="62" y="730" width="290" height="40"/>
+                                <rect key="frame" x="62" y="748" width="290" height="40"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Start movement">
@@ -105,7 +116,8 @@
                             <constraint firstItem="Ab3-53-miW" firstAttribute="trailing" secondItem="MVN-Wq-YDw" secondAttribute="trailing" constant="62" id="HW8-a9-sUt"/>
                             <constraint firstItem="0Gm-e7-6pa" firstAttribute="top" secondItem="bQk-4s-Ly6" secondAttribute="top" id="Hrb-x4-FN5"/>
                             <constraint firstItem="0kT-P0-S8n" firstAttribute="top" secondItem="dsU-pd-Sfy" secondAttribute="bottom" constant="24" id="N4Y-1L-Ca6"/>
-                            <constraint firstItem="t1Y-CL-FHU" firstAttribute="top" secondItem="MVN-Wq-YDw" secondAttribute="bottom" constant="36" id="NoA-3G-Ewi"/>
+                            <constraint firstItem="t1Y-CL-FHU" firstAttribute="top" secondItem="MVN-Wq-YDw" secondAttribute="bottom" constant="18" id="NoA-3G-Ewi"/>
+                            <constraint firstItem="MVN-Wq-YDw" firstAttribute="top" secondItem="pth-0x-cAD" secondAttribute="bottom" constant="28" id="Sld-3c-cgD"/>
                             <constraint firstItem="jJo-Pz-RUK" firstAttribute="leading" secondItem="Ab3-53-miW" secondAttribute="leading" constant="20" id="TB2-zG-OAn"/>
                             <constraint firstItem="0kT-P0-S8n" firstAttribute="centerY" secondItem="Ab3-53-miW" secondAttribute="centerY" id="TyI-r9-eQP"/>
                             <constraint firstItem="Ab3-53-miW" firstAttribute="trailing" secondItem="wWU-ng-6yd" secondAttribute="trailing" constant="20" id="Vg3-Hy-f2I"/>
@@ -118,8 +130,10 @@
                             <constraint firstItem="0Gm-e7-6pa" firstAttribute="height" secondItem="Ab3-53-miW" secondAttribute="height" multiplier="0.12" id="iTB-HX-nFe"/>
                             <constraint firstItem="dsU-pd-Sfy" firstAttribute="leading" secondItem="Ab3-53-miW" secondAttribute="leading" constant="20" id="icH-MP-CBK"/>
                             <constraint firstItem="cWp-cX-oq6" firstAttribute="top" secondItem="0kT-P0-S8n" secondAttribute="bottom" constant="12" id="mbT-pw-tha"/>
+                            <constraint firstItem="Ab3-53-miW" firstAttribute="trailing" secondItem="pth-0x-cAD" secondAttribute="trailing" constant="62" id="nRo-I8-Gfl"/>
                             <constraint firstItem="wWU-ng-6yd" firstAttribute="leading" secondItem="Ab3-53-miW" secondAttribute="leading" constant="20" id="oPh-KT-OgU"/>
                             <constraint firstItem="wWU-ng-6yd" firstAttribute="top" secondItem="0kT-P0-S8n" secondAttribute="bottom" constant="24" id="qQi-ln-0YI"/>
+                            <constraint firstItem="pth-0x-cAD" firstAttribute="leading" secondItem="Ab3-53-miW" secondAttribute="leading" constant="62" id="w3d-lR-UHq"/>
                             <constraint firstItem="0Gm-e7-6pa" firstAttribute="trailing" secondItem="Ab3-53-miW" secondAttribute="trailing" id="yM3-TW-JNp"/>
                         </constraints>
                     </view>
@@ -128,13 +142,14 @@
                         <outlet property="LResult" destination="wWU-ng-6yd" id="7SB-dd-DJK"/>
                         <outlet property="VAction" destination="MVN-Wq-YDw" id="63T-ii-Sno"/>
                         <outlet property="VExample" destination="t1Y-CL-FHU" id="rSn-22-nKx"/>
+                        <outlet property="VRestart" destination="pth-0x-cAD" id="jDb-Hx-OHI"/>
                         <outlet property="imgMovement" destination="pqN-BF-x5w" id="uSY-to-N97"/>
                         <outlet property="loader" destination="cWp-cX-oq6" id="QWW-qm-RIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OhN-aF-c42" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-427.5" y="-64.436619718309856"/>
+            <point key="canvasLocation" x="-427.536231884058" y="-64.955357142857139"/>
         </scene>
     </scenes>
     <resources>
