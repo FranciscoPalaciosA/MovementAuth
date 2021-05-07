@@ -28,7 +28,7 @@ class PracticeController: BaseController, PracticeViewDelegate {
     @IBOutlet weak var loader: UIActivityIndicatorView!
     
     var x_arr: [Double] = [], y_arr: [Double] = [], z_arr: [Double] = [], w_arr: [Double] = []
-    var movementOptions = ["Circle", "Triangle", "Square", "Infinity", "Diamond", "S_Shape"]
+    var movementOptions = ["Circle", "Square" ] //"Infinity", "Diamond", "S_Shape", "Triangle"]
     var movIndex = 0
     var userId = ""
     
@@ -159,11 +159,7 @@ class PracticeController: BaseController, PracticeViewDelegate {
     @IBAction func onClick(_ sender: Any) {
         if(VAction.title(for: .normal) == "Next movement") {
             if(movIndex >= movementOptions.count - 1) {
-                LMovementTitle.text = "No more movements to practice"
-                LResult.text = "Go back to main menu"
-                VExample.isHidden = true
-                VAction.isHidden = true
-                return
+                movIndex = -1
             }
             
             movIndex += 1
